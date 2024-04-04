@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<odoo>
+    <!--Class section-->
+    <record id="class_section_view_form" model="ir.ui.view">
+        <field name="name">section.form</field>
+        <field name="model">class.section</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!--Section View-->
+
+    <record id="class_section_view_tree" model="ir.ui.view">
+        <field name="name">class.section.tree</field>
+        <field name="model">class.section</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+
+            </tree>
+        </field>
+    </record>
+
+     <!--Action for section-->
+    <record id="class_section_action" model="ir.actions.act_window">
+        <field name="name">Class Section</field>
+        <field name="res_model">class.section</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

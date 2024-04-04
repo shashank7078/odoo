@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!--    image Form View-->
+    <record id="image_view_form" model="ir.ui.view">
+        <field name="name">image.form</field>
+        <field name="model">image.info</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                     <field name="image" widget="image" options="{'size': [250, 250]}" />
+                      <field name="name"/>
+                      <field name="date_of_birth"/>
+                      <field name="age"/>
+                    <field name="teacher_ids"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+
+    <!--image List/Tree View-->
+    <record id="image_view_tree" model="ir.ui.view">
+        <field name="name">image.tree</field>
+        <field name="model">image.info</field>
+        <field name="arch" type="xml">
+            <tree>
+                 <field name="image" widget="image" options="{'size': [100, 100]}"/>
+                 <field name="name"/>
+                 <field name="date_of_birth"/>
+                 <field name="age"/>
+            </tree>
+        </field>
+    </record>
+
+<!--    image for action -->
+
+<record id="image_info_action" model="ir.actions.act_window">
+    <field name="name">Teacher Info</field>
+    <field name="res_model">image.info</field>
+    <field name="view_mode">tree,form,search</field>
+    <field name="search_view_id" ref="image_view_tree"/>
+</record>
+
+<!--      search the filter        -->
+<record id="image_view_tree" model="ir.ui.view">
+    <field name="name">image.search</field>
+    <field name="model">image.info</field>
+    <field name="arch" type="xml">
+        <tree>
+             <field name="image" widget="image" options="{'size': [100, 100]}"/>
+            <field name="name"/>
+            <field name="date_of_birth"/>
+            <field name="age"/>
+        </tree>
+        <search>
+            <filter string="Date of Birth" name="date_of_birth" domain="[('date_of_birth', '=', context.get('date_of_birth'))]"/>
+            <filter string="Name" name="name" domain="[('name', 'ilike', context.get('name'))]"/>
+            <filter string="Age" name="age" domain="[('age', 'ilike', context.get('age'))]"/>
+        </search>
+    </field>
+</record>
+</odoo>

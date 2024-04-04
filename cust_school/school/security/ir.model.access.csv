@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_student_info,student.info,model_student_info,,1,1,1,1
+access_teacher_info,teacher.info,model_teacher_info,,1,1,1,1
+access_image_info,image.info,model_image_info,,1,1,1,1
+access_student_info_line,student.info.line,model_student_info_line,,1,1,1,1
+
+
